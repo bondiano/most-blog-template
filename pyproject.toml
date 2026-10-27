@@ -1,0 +1,29 @@
+[project]
+name = "most-blog"
+version = "0.1.0"
+description = "Блог Четвёртого моста: босс раздела PY8 BatSchool"
+requires-python = ">=3.14"
+# Пины те же, что в песочнице школы (runner-python-backend), плюс драйвер PostgreSQL.
+dependencies = [
+    "django==6.1.2",
+    "djangorestframework==3.18.3",
+    "drf-spectacular==0.30.0",
+    "structlog==26.1.0",
+    "django-stubs-ext==6.1.2",
+    "psycopg[binary]==3.3.6",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.4.2",
+    "pytest-django==4.14.0",
+    "mypy==1.18.2",
+    "django-stubs==6.1.2",
+    "djangorestframework-stubs==3.18.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "most.settings"
